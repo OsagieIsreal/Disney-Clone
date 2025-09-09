@@ -25,13 +25,10 @@ function MovieList({ genreId, index_ }) {
   return (
     <div className='relative'>
       <IoChevronBackOutline onClick={() => slideLeft(elementRef.current)}
-        className={`text-[50px] text-white
-           p-2 z-10 cursor-pointer 
-            hidden md:block absolute
-            ${index_ % 3 == 0 ? 'mt-[80px]' : 'mt-[150px]'} `} />
+        className={`hidden md:flex items-center justify-center text-white text-[34px] absolute left-2 md:left-4 top-1/2 -translate-y-1/2 z-10 bg-black/40 rounded-full p-2 backdrop-blur-sm ring-1 ring-white/20 hover:bg-black/60 hover:ring-white/40 transition cursor-pointer`} />
 
       <div ref={elementRef} className='flex overflow-x-auto gap-4 md:gap-8
-     scrollbar-hide scroll-smooth pt-4 px-3 md:px-4 pb-4'>
+     scrollbar-hidden scroll-smooth pt-4 px-3 md:px-4 pb-4'>
         {movieList.map((item) => (
           index_ % 3 === 0
             ? <HrMovieCard key={item.id} movie={item} />
@@ -39,10 +36,10 @@ function MovieList({ genreId, index_ }) {
         ))}
       </div>
       <IoChevronForwardOutline onClick={() => slideRight(elementRef.current)}
-        className={`text-[50px] text-white hidden md:block
-           p-2 cursor-pointer z-10 top-0
-            absolute right-0 
-            ${index_ % 3 == 0 ? 'mt-[80px]' : 'mt-[150px]'}`} />
+        className={`hidden md:flex items-center justify-center text-white text-[34px] absolute right-2 md:right-4 top-1/2 -translate-y-1/2 z-10 bg-black/40 rounded-full p-2 backdrop-blur-sm ring-1 ring-white/20 hover:bg-black/60 hover:ring-white/40 transition cursor-pointer`} />
+
+      <div className='pointer-events-none hidden md:block absolute left-0 top-0 h-full w-12 bg-gradient-to-r from-black/40 to-transparent z-[5]'></div>
+      <div className='pointer-events-none hidden md:block absolute right-0 top-0 h-full w-12 bg-gradient-to-l from-black/40 to-transparent z-[5]'></div>
     </div>
   )
 }

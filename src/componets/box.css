@@ -1,4 +1,4 @@
-.abso{
+.abso {
     position: absolute;
     margin-top: calc(var(--spacing) * 3);
     background-color: #121212;
@@ -10,22 +10,28 @@
     padding-block: calc(var(--spacing) * 4);
 
 }
+
 @property --tw-border-style {
     syntax: "*";
     inherits: false;
     initial-value: solid;
 }
 
-.prob{
+.prob {
     padding: calc(var(--spacing) * 2);
     padding-inline: calc(var(--spacing) * 5);
-    @media (width >= 48rem /* 768px */) {
-        padding-inline: calc(var(--spacing) * 16) /* 4rem = 64px */;
+    @media (width >=48rem
+
+        /* 768px */
+    ) {
+        padding-inline: calc(var(--spacing) * 16)
+            /* 4rem = 64px */
+        ;
         gap: calc(var(--spacing) * 5);
     }
 }
 
-.base{
+.base {
     border: 2px solid red;
     min-width: 100%;
     min-height: 100%;
@@ -34,10 +40,10 @@
     overflow: hidden;
     transition: all 0.3s ease-in-out;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-    cursor: pointer;    
+    cursor: pointer;
 }
 
-.left{
+.left {
     align-items: center;
     justify-content: center;
     color: var(--color-white);
@@ -45,14 +51,23 @@
     position: absolute;
     left: calc(var(--spacing) * 4);
     top: calc(1/2 * 100%);
-    --tw-translate-y: calc(calc(1/2 * 100%) /* 50% */ * -1) /* -50% */;
+    --tw-translate-y: calc(calc(1/2 * 100%)
+            /* 50% */
+            * -1)
+        /* -50% */
+    ;
     translate: var(--tw-translate-x) var(--tw-translate-y);
     z-index: 10;
-    background-color: color-mix(in oklab, var(--color-black) /* #000 = #000000 */ 40%, transparent);
+    background-color: color-mix(in oklab, var(--color-black)
+            /* #000 = #000000 */
+            40%, transparent);
     border-radius: calc(infinity * 1px);
-    padding: calc(var(--spacing) * 2) /* 0.5rem = 8px */;
+    padding: calc(var(--spacing) * 2)
+        /* 0.5rem = 8px */
+    ;
 }
-.right{
+
+.right {
     align-items: center;
     justify-content: center;
     color: var(--color-white);
@@ -60,12 +75,20 @@
     position: absolute;
     right: calc(var(--spacing) * 4);
     top: calc(1/2 * 100%);
-    --tw-translate-y: calc(calc(1/2 * 100%) /* 50% */ * -1) /* -50% */;
+    --tw-translate-y: calc(calc(1/2 * 100%)
+            /* 50% */
+            * -1)
+        /* -50% */
+    ;
     translate: var(--tw-translate-x) var(--tw-translate-y);
     z-index: 10;
-    background-color: color-mix(in oklab, var(--color-black) /* #000 = #000000 */ 40%, transparent);
+    background-color: color-mix(in oklab, var(--color-black)
+            /* #000 = #000000 */
+            40%, transparent);
     border-radius: calc(infinity * 1px);
-    padding: calc(var(--spacing) * 2) /* 0.5rem = 8px */;
+    padding: calc(var(--spacing) * 2)
+        /* 0.5rem = 8px */
+    ;
 }
 
 @property --tw-translate-x {
@@ -73,18 +96,50 @@
     inherits: false;
     initial-value: 0;
 }
+
 @property --tw-translate-y {
     syntax: "*";
     inherits: false;
     initial-value: 0;
 }
+
 @property --tw-translate-z {
     syntax: "*";
     inherits: false;
     initial-value: 0;
 }
 
-.mar{
+.mar {
     margin-bottom: calc(var(--spacing) * 5);
     margin-top: calc(var(--spacing) * 10);
+}
+
+/* Cross-browser scrollbar hidden utility */
+.scrollbar-hidden {
+    -ms-overflow-style: none;
+    /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+}
+
+.scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+    /* Chrome, Safari, Opera */
+}
+
+/* Simple fade-in animation used for dropdown */
+@keyframes fade-in {
+    from {
+        opacity: 0;
+        transform: translateY(4px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.animate-fade-in {
+    animation: fade-in 160ms ease-out;
 }

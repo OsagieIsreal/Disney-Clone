@@ -1,10 +1,10 @@
 // import React from 'react'
 
-function HeaderItems({ name, Icon }) {
+function HeaderItems({ name, Icon, className, compact }) {
   return (
-    <div className='text-white flex items-center gap-3 font-semibold cursor-pointer mb-3'>
+    <div className={`text-white flex items-center gap-3 font-semibold cursor-pointer mb-3 ${className || ''}`}>
       <div className='flex md:hidden gap-5'>{Icon && <Icon />}</div>
-      <span className='relative text-[1.2em] ml-10 drop-shadow hover:after:scale-x-100 after:content-[""] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[3px] after:bg-white after:rounded after:origin-left after:scale-x-0 after:transition-transform'>
+      <span className={`relative text-[1.2em] ${compact ? 'ml-2' : 'ml-10'} drop-shadow hover:after:scale-x-100 after:content-["\""] after:absolute after:left-0 after:-bottom-1 after:w-full after:h-[3px] after:bg-white after:rounded after:origin-left after:scale-x-0 after:transition-transform`}>
         {name}
       </span>
     </div>
