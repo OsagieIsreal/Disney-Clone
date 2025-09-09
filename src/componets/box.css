@@ -1,0 +1,90 @@
+.abso{
+    position: absolute;
+    margin-top: calc(var(--spacing) * 3);
+    background-color: #121212;
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+    border-color: var(--color-gray-700);
+    padding: calc(var(--spacing) * 5);
+    padding-inline: calc(var(--spacing) * 5);
+    padding-block: calc(var(--spacing) * 4);
+
+}
+@property --tw-border-style {
+    syntax: "*";
+    inherits: false;
+    initial-value: solid;
+}
+
+.prob{
+    padding: calc(var(--spacing) * 2);
+    padding-inline: calc(var(--spacing) * 5);
+    @media (width >= 48rem /* 768px */) {
+        padding-inline: calc(var(--spacing) * 16) /* 4rem = 64px */;
+        gap: calc(var(--spacing) * 5);
+    }
+}
+
+.base{
+    border: 2px solid red;
+    min-width: 100%;
+    min-height: 100%;
+    position: relative;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    transition: all 0.3s ease-in-out;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    cursor: pointer;    
+}
+
+.left{
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    font-size: 30px;
+    position: absolute;
+    left: calc(var(--spacing) * 4);
+    top: calc(1/2 * 100%);
+    --tw-translate-y: calc(calc(1/2 * 100%) /* 50% */ * -1) /* -50% */;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+    z-index: 10;
+    background-color: color-mix(in oklab, var(--color-black) /* #000 = #000000 */ 40%, transparent);
+    border-radius: calc(infinity * 1px);
+    padding: calc(var(--spacing) * 2) /* 0.5rem = 8px */;
+}
+.right{
+    align-items: center;
+    justify-content: center;
+    color: var(--color-white);
+    font-size: 30px;
+    position: absolute;
+    right: calc(var(--spacing) * 4);
+    top: calc(1/2 * 100%);
+    --tw-translate-y: calc(calc(1/2 * 100%) /* 50% */ * -1) /* -50% */;
+    translate: var(--tw-translate-x) var(--tw-translate-y);
+    z-index: 10;
+    background-color: color-mix(in oklab, var(--color-black) /* #000 = #000000 */ 40%, transparent);
+    border-radius: calc(infinity * 1px);
+    padding: calc(var(--spacing) * 2) /* 0.5rem = 8px */;
+}
+
+@property --tw-translate-x {
+    syntax: "*";
+    inherits: false;
+    initial-value: 0;
+}
+@property --tw-translate-y {
+    syntax: "*";
+    inherits: false;
+    initial-value: 0;
+}
+@property --tw-translate-z {
+    syntax: "*";
+    inherits: false;
+    initial-value: 0;
+}
+
+.mar{
+    margin-bottom: calc(var(--spacing) * 5);
+    margin-top: calc(var(--spacing) * 10);
+}
